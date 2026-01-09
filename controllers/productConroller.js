@@ -1,24 +1,22 @@
+const productServices=require('../services/productService');
 const getProducts=(req,res)=>{
-    res.send("Fetch All products!!!!");   
+    const products=productServices.getAllProduct();
+    res.send("Fetch All products!!!!!!!");   
 };
 const getProductById=(req,res)=>{
-    res.send("Fetch a product by their ID!!");
-};
-// const editProductById=(req,res)=>{
-//     res.send("update a product by their id.");
-// };
-const addProducts=(req,res)=>{
-    res.send("Add a new product!!");
+    const product=productServices.getProductById();
+    res.send("Fetch a product by their ID!!!!");
 };
 
-// const deleteProductById=(req,res)=>{
-//     res.send("Delete a new product by there id.");
-// };
+const addProducts=(req,res)=>{
+    productServices.addProducts(req);
+    res.send("Add a new product!!!!");
+};
+
+
 module.exports={
     getProducts,
     getProductById,
-    editProductById,
     addProducts,
-    deleteProductById
 }
 
