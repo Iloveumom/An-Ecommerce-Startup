@@ -12,7 +12,11 @@ const getProductById=(req,res)=>{
 
 const addProducts=(req,res)=>{
     productServices.addProducts(req);
-    res.send("Add a new product!!!!");
+    //res.send("Add a new product!!!!");
+    //res.json({value:"sharpner",post:req.query});
+    //console.log(req.body);
+    //res.send("Add product");
+    res.json({value:req.body});
 };
 
 

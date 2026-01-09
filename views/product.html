@@ -7,5 +7,13 @@
 </head>
 <body>
         <h1>Fetch all prodcut</h1>
+        <form onsubmit="onSubmitHandler(event)">
+                    <label for="productname">Product Name:</label>
+                    <input type="text" name="productname" id="productname"/>
+                    <button type="submit">Add Product</button>
+        </form>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script src="./js/product.js"></script>
 </body>
 </html>
