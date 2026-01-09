@@ -1,7 +1,9 @@
+const path=require("path");
 const productServices=require('../services/productService');
 const getProducts=(req,res)=>{
     const products=productServices.getAllProduct();
-    res.send("Fetch All products!!!!!!!");   
+    //res.send("Fetch All products!!!!!!!");   
+    res.sendFile(path.join(__dirname,"..","views","product.html"));
 };
 const getProductById=(req,res)=>{
     const product=productServices.getProductById();
