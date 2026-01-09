@@ -1,12 +1,7 @@
 const express=require("express");
 const router=express.Router();
-router.get("/",(req,res)=>{
-    res.send("Fetch All users!!");
-});
-router.get("/:userID",(req,res)=>{
-    res.send("Fetch a user by their ID");
-});
-router.post("/",(req,res)=>{
-    res.send("Add a new user.");
-});
+const userController=require("../controllers/userController");
+router.get("/",userController.getAllUsers);
+router.get("/:userID",userController.getUserById);
+router.post("/",userController.addUser);
 module.exports=router;

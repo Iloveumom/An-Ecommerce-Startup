@@ -1,10 +1,7 @@
 const express=require("express");
+const cartController=require("../controllers/cartController");
 const router=express.Router();
 
-router.get("/:userID",(req,res)=>{
-    res.send(" Fetch the cart items for a specific user.");
-});
-router.post("/:userID",(req,res)=>{
-    res.send("Add a product to the user's cart.");
-});
+router.get("/:userID",cartController.getCartForUser);
+router.post("/:userID",cartController.addProductToCart);
 module.exports=router;
